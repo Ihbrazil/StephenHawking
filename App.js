@@ -1,11 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { Text, Image, View, StyleSheet } from 'react-native';
+
+import Capa from './assets/images/capa-livro.jpg';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={ styles.container }>
+      <Image
+        style={ styles.imagem }
+        source={ Capa } />
+      <Text
+        style={ styles.titulo }>
+        Uma Breve História do Tempo
+      </Text>
+      <Text
+        style={ styles.descricao }>
+        Marco definitivo da literatura de divulgação científica, Uma breve história do tempo é relançado em edição revista e atualizada.
+      </Text>
+      <Text
+        style={ styles.citacao }>
+        "Uma obra magistral." The Wall Street Journal
+      </Text>
+      <Text
+        style={ styles.citacao }>
+        "Uma breve história do tempo é a união do entusiasmo de uma criança ao intelecto de um gênio." The Sunday Times
+      </Text>
+
     </View>
   );
 }
@@ -13,8 +33,32 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 20,
   },
+
+  imagem: {
+    width: 175,
+    height: 250,
+    marginBottom: 20,
+  },
+
+  titulo: {
+    fontSize: 20,
+    marginBottom: 20,
+    textAlign:"center",
+  },
+
+  descricao: {
+    fontWeight: 'bold',
+    marginBottom: 10,
+    textAlign: "center"
+  },
+
+  citacao: {
+    fontStyle: 'italic',
+    marginBottom: 10,
+    textAlign: "center"
+  }
 });
